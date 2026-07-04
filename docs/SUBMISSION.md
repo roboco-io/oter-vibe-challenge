@@ -2,8 +2,9 @@
 
 ## 1. 템플릿 복제
 
-과제용 템플릿 저장소를 **"Use this template"** 버튼으로 **Private** 저장소로 복제합니다.
+과제용 템플릿 저장소를 **"Use this template"** 버튼으로 **Private** 저장소로 복제합니다. (Owner는 본인 계정, Repository visibility는 Private)
 
+- 템플릿에서 새 저장소 만들기: https://github.com/roboco-io/oter-vibe-challenge-template/generate
 - 템플릿 저장소: https://github.com/roboco-io/oter-vibe-challenge-template
 
 ## 2. 데일리 push (필수)

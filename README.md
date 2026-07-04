@@ -38,6 +38,9 @@
 
 ## 시작하기
 
-과제용 템플릿 저장소를 "Use this template" 버튼으로 **Private** 복제한 뒤 시작하세요.
+[![Use this template](https://img.shields.io/badge/Use%20this%20template-2ea44f?style=for-the-badge&logo=github&logoColor=white)](https://github.com/roboco-io/oter-vibe-challenge-template/generate)
 
-- 템플릿 저장소: https://github.com/roboco-io/oter-vibe-challenge-template ("Use this template"로 시작)
+위 버튼을 누르면 템플릿에서 새 저장소를 만드는 화면으로 이동합니다. **Owner를 본인 계정으로, 저장소를 Private으로** 설정해 복제한 뒤 시작하세요. (버튼이 안 보이면 아래 링크를 직접 여세요.)
+
+- 템플릿에서 새 저장소 만들기: https://github.com/roboco-io/oter-vibe-challenge-template/generate
+- 템플릿 저장소: https://github.com/roboco-io/oter-vibe-challenge-template
