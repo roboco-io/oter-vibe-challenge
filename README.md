@@ -40,6 +40,4 @@
 
 과제용 템플릿 저장소를 "Use this template" 버튼으로 **Private** 복제한 뒤 시작하세요.
 
-- 템플릿 저장소: https://github.com/roboco-io/oter-vibe-challenge-template
-
-> 템플릿 저장소는 별도로 준비 중입니다. 링크가 아직 비어 있어도 위 주소로 곧 제공됩니다.
+- 템플릿 저장소: https://github.com/roboco-io/oter-vibe-challenge-template ("Use this template"로 시작)

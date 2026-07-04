@@ -10,10 +10,10 @@
 
 | ID | 항목 | 설명 |
 |---|---|---|
-| M1 | PHP 앱 NCS 컨테이너 배포 (마이그레이션) | 제공된 레거시 PHP RealWorld 앱을 수정 없이(또는 최소 수정으로) 컨테이너화하여 NHN Cloud NCS에 배포한다. |
-| M2 | 공식 E2E(RealWorld API) 그린 (안전망) | RealWorld 공식 API 통합 테스트 스위트를 M1 배포본에 대해 실행하여 전부 통과시킨다. 이후 재구현본의 동등성 판단 기준이 된다. |
-| M3 | 선택 스택 재구현 + 동일 E2E 통과 (동등성) | 자기 선택 언어·프레임워크로 API를 재구현하고, M2와 동일한 공식 E2E 스위트를 통과시켜 동등성을 증명한다. |
-| M4 | 스택 선택 ADR + Terraform IaC | 재구현 스택 선택 근거를 ADR로 문서화하고, NCS 인프라를 Terraform으로 코드화한다. |
+| M1 | PHP 앱 NCS 컨테이너 배포 (마이그레이션) | 제공된 레거시 앱을 컨테이너화해 NCS에 배포한다. 코드 변경 범위는 지원자 재량이며 ADR로 근거를 설명한다. |
+| M2 | 공식 E2E(RealWorld API) baseline 확보 (안전망) | RealWorld 공식 API 스위트를 M1 배포본에 실행해 baseline 통과 프로파일(현재 388/456)을 확보한다. 완전 그린이 아니며, 미통과 68건은 레거시 v2 미준수로 `e2e/README.md`에 문서화돼 있다. 이 baseline이 재구현 동등성 판단 기준이 된다. |
+| M3 | 선택 스택 재구현 + 동일 E2E 통과 (동등성) | 자기 선택 언어·프레임워크로 API를 재구현하고, 동일 스위트에서 baseline 프로파일을 회귀 없이 통과시켜 동등성을 증명한다. 문서화된 68 갭 해소는 가점. |
+| M4 | 스택 선택 ADR + Terraform IaC | 재구현 스택 선택 근거를 ADR로 문서화하고, Terraform으로 지원 인프라를 코드화한다. 단 NHN Terraform provider에 NCS/NCR 네이티브 리소스가 없으므로, NCS/NCR 프로비저닝 접근(콘솔/NHN API/CLI/local-exec)은 지원자가 선택해 ADR로 정당화한다. |
 | M5 | GitHub Actions CI (빌드 → NCR → NCS) | 빌드, NHN Cloud Container Registry(NCR) 푸시, NCS 배포까지 이어지는 CI 파이프라인을 GitHub Actions로 구성한다. |
 | M6 | 데일리 push + Retrobot 회고 + tokenhabit 리포트 | 매일 커밋을 push하고, Retrobot으로 KPT 회고를 남기며, tokenhabit으로 토큰 사용 리포트를 남긴다. |
 
@@ -67,6 +67,7 @@
 - 시크릿(API 키, 자격 증명 등)을 커밋한 경우
 - 배포가 실제로 동작하지 않는 경우
 - AI 사용 사실을 은폐한 경우
+- (참고) baseline 통과 프로파일(388/456) 대비 회귀는 불합격 사유는 아니나 목표 완수·E2E 안전망 배점에서 감점 요소로 반영됩니다.
 
 ## 평가 원칙
 
